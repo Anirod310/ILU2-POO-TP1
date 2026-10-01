@@ -1,0 +1,14 @@
+package histoire;
+
+import villagegaulois.Etal;
+
+public class ScenarioCasDegrade {
+
+	public static void main(String[] args) {
+		Etal etal = new Etal();
+		etal.acheterProduit(0, null);
+		System.out.println("Fini du test");
+		
+	}
+
+}
