@@ -2,7 +2,6 @@ package villagegaulois;
 
 import personnages.Chef;
 import personnages.Gaulois;
-import villagegaulois.Etal;
 
 public class Village {
 	private String nom;
@@ -116,7 +115,7 @@ public class Village {
 		return chaine.toString();
 	}
 	
-	
+	// TODO : Bonnes pratiques classe interne
 	public class Marche {
 		private Etal[] etals;
 		public Marche(int nbEtals) {
@@ -165,7 +164,8 @@ public class Village {
 		 
 		 public Etal trouverVendeur(Gaulois gaulois){
 			 for(int i = 0; i< etals.length; i++) {
-				 if(etals[i].getVendeur() == gaulois) {
+				 Gaulois vendeur = etals[i].getVendeur();
+				 if(vendeur != null && vendeur.equals(gaulois)) {
 					 return etals[i];
 				 }
 			 }
@@ -188,7 +188,9 @@ public class Village {
 			 }
 			 
 			 if (nbEtalVide > 0) {
-		            chaine.append("Il reste " + nbEtalVide + " étals non utilisés dans le marché.\n");
+		            chaine.append("Il reste ");
+		            chaine.append(nbEtalVide);
+		            chaine.append("étals non utilisés dans le marché.\n");
 		        }
 		     return chaine.toString();
 		 }

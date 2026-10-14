@@ -39,7 +39,7 @@ public class Etal {
 		}
 		return chaine.toString();
 		}catch(NullPointerException e) {
-			e.printStackTrace();
+			System.out.println(e.getMessage());
 			return "L'étal n'était pas occupé.";
 			}
 	}
